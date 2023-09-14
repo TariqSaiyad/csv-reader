@@ -4,7 +4,7 @@ import { useCSV } from "./hooks/useCSV";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const filePath = `${process.env.NEXT_PUBLIC_SITE_URL}/ppc-data.csv`;
+  const filePath = `${process.env.NEXT_PUBLIC_BASE_PATH}/ppc-data.csv`;
 
   const { data, errors, isLoading } = useCSV(filePath);
 

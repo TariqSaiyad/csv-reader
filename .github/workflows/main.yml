@@ -17,12 +17,14 @@ jobs:
       - name: Setup .env variables
         run: |
           touch .env
-          echo NEXT_PUBLIC_SITE_URL=${{ vars.NEXT_PUBLIC_SITE_URL }} >> .env
+          echo NEXT_PUBLIC_BASE_PATH=${{ vars.NEXT_PUBLIC_BASE_PATH }} >> .env
+          echo NEXT_PUBLIC_ASSET_PATH=${{ vars.NEXT_PUBLIC_ASSET_PATH }} >> .env
 
       - name: Install and build 🛠️
         run: |
           bun install
           bun run build
+          touch out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

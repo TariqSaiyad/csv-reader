@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="robots" content="noindex" />
         <link
           rel="preload"
-          href={`${process.env.NEXT_PUBLIC_SITE_URL}/ppc-data.csv`}
+          href={`${process.env.NEXT_PUBLIC_BASE_PATH}/ppc-data.csv`}
           as="fetch"
           crossOrigin="anonymous"
         />
