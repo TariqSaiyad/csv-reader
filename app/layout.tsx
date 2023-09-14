@@ -17,10 +17,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="robots" content="noindex" />
         <link
           rel="preload"
-          href="/ppc-data.csv"
+          href={`${process.env.NEXT_PUBLIC_SITE_URL}/ppc-data.csv`}
           as="fetch"
-          // @ts-expect-error something with ts
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
       </head>
       <body className={inter.className}>{children}</body>
